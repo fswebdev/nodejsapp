@@ -1,17 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Dropbox - 403</title>
-<link href="https://cfl.dropboxstatic.com/static/css/error.css" rel="stylesheet" type="text/css"/>
-<link rel="shortcut icon" href="https://cfl.dropboxstatic.com/static/images/favicon.ico"/>
-</head>
-<body>
-<div class="figure">
-<img src="https://assets.dropbox.com/www/en-us/illustrations/spot/traffic-u-turn.svg" alt="Error: 403"/>
-</div>
-<div id="errorbox">
-<h1>Error (403)</h1>It seems you don't belong here! You should probably <b><a href="https://www.dropbox.com/login">sign in</a></b>. Check out our <a href="https://www.dropbox.com/help">Help Center</a> and <a href="https://forums.dropbox.com">forums</a> for help, or head back to <a href="https://www.dropbox.com/home">home</a>.
-</div>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>nodejsapp</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css" crossorigin="anonymous">
+</head>
+
+<body>
+    <a href="/"><button class="nav-link">Home</button></a>
+
+    <!-- Main -->
+    <main class="mtl">
+            <h4>Product detail</h4>
+            <div>&nbsp;</div>
+            <table class="table table-bordered">
+                <tr>
+                    <td>ID</td>
+                    <td>
+                        <%= product._id %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <%= product.name %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>
+                        <%= product.price %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>
+                        <%= product.description %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Color</td>
+                    <td>
+                        <%= product.color %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Category</td>
+                    <td>
+                        <%= product.category %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Brand</td>
+                    <td>
+                        <%= product.brand %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Product status</td>
+                    <td>
+                        <%= product.product_status %>
+                    </td>
+                </tr>
+            </table>
+        <a href="/edit/<%= product._id %>"><button class="nav-link">Edit</button></a>
+        <div>&nbsp;</div>
+        <form action="/products/<%= product._id %>" method="post">
+            <!-- button type="submit">Delete</button -->
+			<button type="submit" class="btn btn-primary">Delete</button>
+        </form>
+
+    </main>
+    <!-- /.container -->
+
+    <script type="text/javascript" src="./js/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/popper.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
